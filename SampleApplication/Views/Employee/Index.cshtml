@@ -1,0 +1,22 @@
+﻿@model SampleApplication.Models.Employee
+@{
+    ViewBag.Title = "Index";
+}
+<h4>Employee Details </h4>
+<h3 style="color:red"> @TempData["msg"]</h3>
+<div>
+    @using (Html.BeginForm("EmployeeResult", "Employee"))
+    {
+      
+        <div class="row">
+            <div class="col-lg-2">@Html.LabelFor(model => model.FirstName)</div>
+            <div class="col-lg-10">@Html.TextBoxFor(model => model.FirstName, new { @class = "form-control" })</div>
+        </div><br />
+        <div class="row">
+            <div class="col-lg-2">@Html.LabelFor(model => model.LastName)</div>
+            <div class="col-lg-10">@Html.TextBoxFor(model => model.LastName, new { @class = "form-control" })</div>
+        </div><br />
+        <input type="submit" value="Login" class="btn btn-primary" />
+    }
+
+</div>
